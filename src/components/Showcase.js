@@ -8,13 +8,12 @@ function Showcase() {
   const [lightboxContent, setLightboxContent] = useState({ type: '', src: '' });
   const submissionNotice = location.state?.submitted ? (location.state?.notice || 'We have received your information.') : '';
 
-  // Placeholder data - Replace with actual Instagram photos/videos
   const photos = [
-    { id: 1, src: '', alt: 'Training photo 1', isPlaceholder: true },
-    { id: 2, src: '', alt: 'Training photo 2', isPlaceholder: true },
-    { id: 3, src: '', alt: 'Training photo 3', isPlaceholder: true },
-    { id: 4, src: '', alt: 'Training photo 4', isPlaceholder: true },
-    { id: 5, src: '', alt: 'Training photo 5', isPlaceholder: true },
+    { id: 1, src: '/images/photo/1.png', alt: 'Training photo 1', isPlaceholder: false },
+    { id: 2, src: '/images/photo/2.png', alt: 'Training photo 2', isPlaceholder: false },
+    { id: 3, src: '/images/photo/3.png', alt: 'Training photo 3', isPlaceholder: false },
+    { id: 4, src: '/images/photo/4.png', alt: 'Training photo 4', isPlaceholder: false },
+    { id: 5, src: '/images/photo/5.png', alt: 'Training photo 5', isPlaceholder: false },
     { id: 6, src: '', alt: 'Training photo 6', isPlaceholder: true },
   ];
 
@@ -42,8 +41,8 @@ function Showcase() {
         <img src="/images/hero.png" alt="Kuldeep training" className="showcase-hero-image" />
         <div className="showcase-hero-overlay"></div>
         <div className="showcase-hero-content">
-          <h1 className="showcase-title">Kuldeep Kumawat</h1>
-          <p className="showcase-subtitle">Professional Gymnast & Fitness Coach</p>
+          {/* <h1 className="showcase-title">Kuldeep Kumawat</h1> */}
+          {/* <p className="showcase-subtitle">Professional Gymnast & Fitness Coach</p> */}
           {submissionNotice && <p className="submission-notice">{submissionNotice}</p>}
           <Link to="/" className="back-button">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">

@@ -31,10 +31,10 @@
     position: relative;
     width: 100%;
     height: auto;
-    max-height: 68vh;
     object-fit: contain;
     object-position: center;
     display: block;
+    transform: translateY(-150px);
 }
 
 .showcase-hero-overlay {
@@ -95,6 +95,10 @@
     font-weight: 600;
     transition: all 0.3s ease;
     border: 2px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
 }
 
 .back-button:hover {
@@ -104,8 +108,8 @@
 }
 
 .gallery-section {
-    margin-top: -110px;
-    padding: 20px 20px 80px;
+    margin-top: -1000px;
+    padding: 50px 20px 80px;
     position: relative;
     z-index: 2;
 }
@@ -338,18 +342,19 @@
         width: 74px;
     }
 
-    .showcase-hero-content {
-        padding: 36px 16px;
-        margin-top: -90px;
+    .back-button {
+        top: 14px;
+        right: 14px;
+        padding: 10px 16px;
     }
 
-    .showcase-hero-image {
-        max-height: 58vh;
+    .showcase-hero-content {
+        padding: 36px 16px;
+        margin-top: -120px;
     }
 
     .gallery-section {
-        margin-top: -70px;
-        padding-top: 16px;
+        margin-top: -80px;
     }
 
     .showcase-title {
