@@ -208,29 +208,6 @@
     margin-top: 10px;
 }
 
-.video-item::after {
-    content: '▶';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-}
-
-.play-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    pointer-events: none;
-}
-
 .video-section {
     margin-top: 80px;
 }
@@ -336,6 +313,10 @@
 }
 
 @media (max-width: 768px) {
+    .showcase-hero-image {
+        transform: translateY(-70px);
+    }
+
     .showcase-page-logo {
         top: 14px;
         left: 14px;
@@ -384,3 +365,4 @@
         font-size: 30px;
     }
 }
+
