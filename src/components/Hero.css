@@ -21,13 +21,14 @@
 
 .hero-text {
     color: #ffffff;
+    text-align: center;
 }
 
 .site-logo {
-    width: 140px;
+    width: 250px;
     height: auto;
     display: block;
-    margin-bottom: 24px;
+    margin: 0 auto 24px;
 }
 
 .hero-title {
