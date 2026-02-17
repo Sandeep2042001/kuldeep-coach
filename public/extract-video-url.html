@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Instagram Video URL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .instructions ol {
+            line-height: 1.8;
+        }
+        code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        .video-url-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            background: #667eea;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #5568d3;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: none;
+        }
+        .result.show {
+            display: block;
+        }
+        .video-url {
+            word-break: break-all;
+            background: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Extract Instagram Video URL</h1>
+        
+        <div class="instructions">
+            <h2>Step-by-Step Instructions:</h2>
+            <ol>
+                <li>Open <a href="https://www.instagram.com/reel/Ch6UHCwPc-E/" target="_blank">the Instagram reel</a> in a new tab</li>
+                <li>Right-click on the video → Select "Inspect" or press <code>F12</code></li>
+                <li>In the Developer Tools, click on the "Elements" tab</li>
+                <li>Press <code>Ctrl+F</code> (or <code>Cmd+F</code> on Mac) to search</li>
+                <li>Type: <code>&lt;video</code> to find the video element</li>
+                <li>Look for the <code>src</code> attribute in the <code>&lt;video&gt;</code> tag</li>
+                <li>Copy the entire URL (it will be very long, starting with <code>https://scontent-</code>)</li>
+                <li>Paste it in the box below and click "Extract"</li>
+            </ol>
+        </div>
+
+        <div>
+            <h3>Or Paste the Video URL Here:</h3>
+            <input 
+                type="text" 
+                id="videoUrl" 
+                class="video-url-input" 
+                placeholder="Paste the video URL from Instagram here..."
+            />
+            <button onclick="extractUrl()">Extract & Copy</button>
+        </div>
+
+        <div id="result" class="result">
+            <h3>Extracted Video URL:</h3>
+            <div class="video-url" id="extractedUrl"></div>
+            <p><strong>Next Step:</strong> Copy this URL and update <code>videoSrc</code> in <code>VideoBackground.js</code></p>
+        </div>
+    </div>
+
+    <script>
+        function extractUrl() {
+            const input = document.getElementById('videoUrl');
+            const result = document.getElementById('result');
+            const extractedUrl = document.getElementById('extractedUrl');
+            
+            let url = input.value.trim();
+            
+            if (!url) {
+                alert('Please paste the video URL first!');
+                return;
+            }
+
+            // Clean up the URL if needed
+            if (url.includes('src=')) {
+                url = url.match(/src="([^"]+)"/)[1];
+            }
+
+            extractedUrl.textContent = url;
+            result.classList.add('show');
+
+            // Copy to clipboard
+            navigator.clipboard.writeText(url).then(() => {
+                alert('Video URL copied to clipboard! Now update VideoBackground.js');
+            }).catch(() => {
+                // Fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = url;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textarea);
+                alert('Video URL copied! Now update VideoBackground.js');
+            });
+        }
+    </script>
+</body>
+</html>

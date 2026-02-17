@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuldeep Kumawat - Professional Gymnast & Fitness Coach</title>
+    <link rel="icon" type="image/png" href="public/images/logo.png">
+    <link rel="apple-touch-icon" href="public/images/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Transform Your Body</span><br>
+                    Master the Art of Movement
+                <button class="cta-button" onclick="startForm()">
+                    Start Your Journey
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <section class="packages-section">
+        <div class="container">
+            <h2 class="section-title">Choose Your Training Program</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-icon">🤸</div>
+                    <h3>Gymnastics Classes</h3>
+                    <p>Professional gymnastics training for all skill levels</p>
+                    <ul class="package-features">
+                        <li>Personalized coaching</li>
+                        <li>Progressive skill development</li>
+                        <li>Strength & flexibility training</li>
+                    </ul>
+                    <button class="package-button" onclick="startForm('Gymnastics Classes')">Book Now</button>
+                </div>
+                
+                <div class="package-card featured">
+                    <div class="package-badge">Popular</div>
+                    <div class="package-icon">💪</div>
+                    <h3>Calisthenics Fitness</h3>
+                    <p>Bodyweight training for ultimate strength</p>
+                    <ul class="package-features">
+                        <li>Muscle building</li>
+                        <li>Core strength</li>
+                        <li>Body control mastery</li>
+                    </ul>
+                    <button class="package-button" onclick="startForm('Calisthenics Fitness')">Book Now</button>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-icon">🧘</div>
+                    <h3>Flexibility & Mobility</h3>
+                    <p>Enhance your range of motion and prevent injuries</p>
+                    <ul class="package-features">
+                        <li>Flexibility training</li>
+                        <li>Mobility exercises</li>
+                        <li>Injury prevention</li>
+                    </ul>
+                    <button class="package-button" onclick="startForm('Flexibility & Mobility Classes')">Book Now</button>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-icon">🏋️</div>
+                    <h3>Personal Training</h3>
+                    <p>One-on-one sessions tailored to your goals</p>
+                    <ul class="package-features">
+                        <li>Customized programs</li>
+                        <li>Individual attention</li>
+                        <li>Flexible scheduling</li>
+                    </ul>
+                    <button class="package-button" onclick="startForm('Personal Training')">Book Now</button>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-icon">🎯</div>
+                    <h3>Advanced Calisthenics</h3>
+                    <p>Master advanced moves and skills</p>
+                    <ul class="package-features">
+                        <li>Advanced techniques</li>
+                        <li>Skill progression</li>
+                        <li>Performance training</li>
+                    </ul>
+                    <button class="package-button" onclick="startForm('Advanced Calisthenics')">Book Now</button>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-icon">🌟</div>
+                    <h3>Complete Fitness Package</h3>
+                    <p>All-in-one comprehensive training program</p>
+                    <ul class="package-features">
+                        <li>All training types</li>
+                        <li>Nutrition guidance</li>
+                        <li>Progress tracking</li>
+                    </ul>
+                    <button class="package-button" onclick="startForm('Complete Fitness Package')">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Modal -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeForm()">&times;</button>
+            
+            <!-- Step 1: Service Selection -->
+            <div id="step1" class="form-step active">
+                <div class="step-indicator">
+                    <div class="step-number">1</div>
+                    <div class="step-line"></div>
+                    <div class="step-number">2</div>
+                </div>
+                <h2 class="form-title">What are you interested in?</h2>
+                <p class="form-subtitle">Select the training program that matches your goals</p>
+                <div class="service-options">
+                    <button class="service-option" onclick="selectService('Gymnastics Classes')">
+                        <span class="service-icon">🤸</span>
+                        <span class="service-text">Gymnastics Classes</span>
+                    </button>
+                    <button class="service-option" onclick="selectService('Calisthenics Fitness')">
+                        <span class="service-icon">💪</span>
+                        <span class="service-text">Calisthenics Fitness</span>
+                    </button>
+                    <button class="service-option" onclick="selectService('Flexibility & Mobility Classes')">
+                        <span class="service-icon">🧘</span>
+                        <span class="service-text">Flexibility & Mobility Classes</span>
+                    </button>
+                    <button class="service-option" onclick="selectService('Personal Training')">
+                        <span class="service-icon">🏋️</span>
+                        <span class="service-text">Personal Training</span>
+                    </button>
+                    <button class="service-option" onclick="selectService('Advanced Calisthenics')">
+                        <span class="service-icon">🎯</span>
+                        <span class="service-text">Advanced Calisthenics</span>
+                    </button>
+                    <button class="service-option" onclick="selectService('Complete Fitness Package')">
+                        <span class="service-icon">🌟</span>
+                        <span class="service-text">Complete Fitness Package</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Personal Details -->
+            <div id="step2" class="form-step">
+                <div class="step-indicator">
+                    <div class="step-number completed">✓</div>
+                    <div class="step-line active"></div>
+                    <div class="step-number active">2</div>
+                </div>
+                <h2 class="form-title">Tell us about yourself</h2>
+                <p class="form-subtitle">We'll use this information to personalize your training</p>
+                
+                <form id="detailsForm" class="details-form">
+                    <div class="form-group">
+                        <label for="name">What is your name? *</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="age">What is your age? *</label>
+                        <input type="number" id="age" name="age" required placeholder="Enter your age" min="10" max="100">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gender">What is your gender? *</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="Male" required>
+                                <span>Male</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="Female" required>
+                                <span>Female</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="gender" value="Other" required>
+                                <span>Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="profession">What is your profession? *</label>
+                        <input type="text" id="profession" name="profession" required placeholder="e.g., Student, Engineer, Teacher">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Where do you live? *</label>
+                        <input type="text" id="location" name="location" required placeholder="Enter your city/location">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number" pattern="[0-9]{10}">
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="goToStep1()">Back</button>
+                        <button type="submit" class="btn-primary">Submit & Continue</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

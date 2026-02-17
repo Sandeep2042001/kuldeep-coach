@@ -1,0 +1,154 @@
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: #000000;
+}
+
+.video-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+}
+
+.video-instructions {
+    max-width: 600px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.video-instructions h3 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.video-instructions ol {
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+.video-instructions li {
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+.video-instructions code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+}
+
+.video-instructions .note {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 200, 0, 0.2);
+    border-radius: 8px;
+    border-left: 4px solid #ffc800;
+}
+
+.instagram-embed-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.instagram-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150vw;
+    height: 150vh;
+    min-width: 150vw;
+    min-height: 150vh;
+    border: none;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Video element - preferred method */
+.video-bg-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    object-position: center;
+    pointer-events: none;
+    z-index: 0;
+    background: #000000;
+}
+
+/* Ensure video always covers full viewport */
+@media (min-aspect-ratio: 16/9) {
+    .video-bg-element {
+        width: 100vw;
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .video-bg-element {
+        width: auto;
+        height: 100vh;
+        min-width: 100vw;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .instagram-video-bg {
+        width: 200vw;
+        height: 200vh;
+        min-width: 200vw;
+        min-height: 200vh;
+    }
+}
+
+@media (orientation: portrait) {
+    .instagram-video-bg {
+        width: 250vw;
+        height: 250vh;
+    }
+    
+    .video-bg-element {
+        width: auto;
+        height: 100vh;
+        min-width: 100vw;
+    }
+}
